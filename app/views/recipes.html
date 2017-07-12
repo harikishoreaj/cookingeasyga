@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row row-content"
+      ng-controller="RecipeController as recipeCtrl">
+        <div class="col col-xs-12">
+            <ul class="media-list">
+                <li class="media" ng-repeat="recipe in recipes">
+                    <div class="media-left media-middle">
+                        <a href="#"><img class="media-object img-thumbnail img-responsive" ng-src={{recipe.image}}></a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{recipe.name}}<span class="label">{{recipe.label}}</span></h2>
+                        <p>{{recipe.description}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
