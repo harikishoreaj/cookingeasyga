@@ -28,7 +28,26 @@ app.config(function($stateProvider, $urlRouterProvider) {
         controller : 'RecipeController'
       }
     }
-  }) ;
+  })
+
+  .state('app.recipedetail',{
+    url : 'reciepdetail/:id',
+    views : {
+      'content@' : {
+        templateUrl : 'views/recipedetail.html',
+        controller  : 'RecipeDetailController'
+      }
+    }
+  })
+
+  .state('app.contactus',{
+    url : 'contactus',
+    views : {
+      'content@' : {
+        templateUrl : 'views/contactus.html'
+      }
+    }
+  });
 
   $urlRouterProvider.otherwise('/');
 });

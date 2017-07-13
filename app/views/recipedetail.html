@@ -1,0 +1,37 @@
+<div class="container" ng-controller="RecipeDetailController">
+  <div class="row">
+    <div class="col col-sm-9">
+      <div class="media">
+        <div class="media-left media-middle">
+          <img class="media-object img-responsive img-thumbnail z-media-img" src="{{recipe.image}}">
+        </div>
+        <div class="media-body">
+          <h2>{{recipe.name}}</h2>
+          <p>{{recipe.description}}</p>
+        </div>
+      </div>
+
+      <h2>Ingredients</h2>
+      <dl class="dl-horizontal">
+        <div ng-repeat="(item,quantity) in recipe.ingridients">
+          <dt>{{item}}</dt>
+          <dd>{{quantity}}</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="col col-sm-3">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-12">
+      <h2>Method</h2>
+      <ul>
+        <div ng-repeat="step in recipe.procedure">
+          <li>
+            {{step}}
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

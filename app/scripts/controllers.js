@@ -18,3 +18,8 @@ app.controller('RecipeController',['$scope','recipeFactory',function($scope,reci
 
   $scope.recipes = recipeFactory.getRecipes();
 }]);
+
+app.controller('RecipeDetailController', ['$scope', '$stateParams', 'recipeFactory', function($scope,$stateParams,recipeFactory){
+
+  $scope.recipe = recipeFactory.getRecipe(parseInt($stateParams.id,0));
+}])

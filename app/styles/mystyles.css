@@ -15,12 +15,17 @@
 }
 .navbar-inverse {
   background: #303f9f;
-  color: #ffffff;
+  /*background: #085904;*/
+  color: floralwhite;
 }
 .jumbotron {
   margin: 0px auto;
   background: #7986CB;
+  /*background: #49d642;*/
   color: floralwhite;
+}
+.z-media-img {
+  max-height: 120;
 }
 body {
   align: center;
