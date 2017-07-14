@@ -19,7 +19,8 @@ app.controller('RecipeController',['$scope','recipeFactory',function($scope,reci
   $scope.recipes = recipeFactory.getRecipes();
 }]);
 
-app.controller('RecipeDetailController', ['$scope', '$stateParams', 'recipeFactory', function($scope,$stateParams,recipeFactory){
+app.controller('RecipeDetailController', ['$scope', '$stateParams', 'recipeFactory', 'authorFactory', function($scope,$stateParams,recipeFactory,authorFactory){
 
   $scope.recipe = recipeFactory.getRecipe(parseInt($stateParams.id,0));
+  $scope.author = authorFactory.getAuthor($scope.recipe.authorid);
 }])

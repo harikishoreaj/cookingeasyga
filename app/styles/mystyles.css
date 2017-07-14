@@ -13,6 +13,9 @@
   padding: 20px 0px;
   background-color: #AfAfAf;
 }
+.nav {
+  font-size: 1.3em;
+}
 .navbar-inverse {
   background: #303f9f;
   /*background: #085904;*/
@@ -25,7 +28,7 @@
   color: floralwhite;
 }
 .z-media-img {
-  max-height: 120;
+  max-width: : 120;
 }
 body {
   align: center;
