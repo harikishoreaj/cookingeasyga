@@ -2,7 +2,13 @@
 
 var app = angular.module('cookingApp');
 
-app.controller('HomeController',['$scope','recipeFactory', 'authorFactory', function($scope, recipeFactory, authorFactory){
+app.controller('HomeController', funcHomeController);
+app.controller('RecipeController',funcRecipeController);
+app.controller('RecipeDetailController', funcRecipeDetailController);
+
+
+// funcHomeController.$inject = ['$scope','recipeFactory', 'authorFactory'];
+function funcHomeController($scope, recipeFactory, authorFactory){
   $scope.featuredRecipe = {};
   $scope.featuredSpecialist = {};
   var fRecipeid = 0;
@@ -10,17 +16,16 @@ app.controller('HomeController',['$scope','recipeFactory', 'authorFactory', func
 
   $scope.featuredRecipe = recipeFactory.getRecipe(fRecipeid);
   $scope.featuredSpecialist = authorFactory.getAuthor(fSpecialistid);
-}]);
+};
 
-app.controller('RecipeController',['$scope','recipeFactory',function($scope,recipeFactory){
-
+// funcRecipeController.$inject = ['$scope','recipeFactory'];
+function funcRecipeController($scope,recipeFactory){
   $scope.recipes = [];
-
   $scope.recipes = recipeFactory.getRecipes();
-}]);
+};
 
-app.controller('RecipeDetailController', ['$scope', '$stateParams', 'recipeFactory', 'authorFactory', function($scope,$stateParams,recipeFactory,authorFactory){
-
+// funcRecipeDetailController.$inject = ['$scope', '$stateParams', 'recipeFactory', 'authorFactory'];
+function funcRecipeDetailController($scope,$stateParams,recipeFactory,authorFactory){
   $scope.recipe = recipeFactory.getRecipe(parseInt($stateParams.id,0));
   $scope.author = authorFactory.getAuthor($scope.recipe.authorid);
-}])
+};
